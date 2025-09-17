@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 const Contact = () => {
   return (
@@ -40,12 +41,7 @@ const Contact = () => {
           className="w-full p-4 text-base text-[#ffffffe2] bg-[#323946] rounded-lg mb-4 resize-none"
         ></textarea>
 
-        <button
-          type="submit"
-          className="mt-4 inline-block px-7 py-3 bg-[#00fbff] rounded-full shadow-[0_0_1rem_#00fbff] text-lg text-[#323946] font-semibold hover:shadow-none transition duration-500 cursor-pointer"
-        >
-          Send Message
-        </button>
+        <Button href="#" content="Send Message" onClick={() => {}} />
       </form>
     </section>
   );
