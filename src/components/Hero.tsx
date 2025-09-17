@@ -26,10 +26,30 @@ const Hero = () => {
       id="home"
       className="min-h-screen w-full px-[9%] py-28 flex flex-col md:flex-row justify-center items-center"
     >
-      <div className="mt-10 md:-mt-40 w-full md:w-1/2">
-        <h3 className="text-3xl font-bold mt-10">Hello, It's Me</h3>
-        <h1 className="text-4xl font-bold text-[#00fbff] my-2">Van Anh Quan</h1>
-        <h3 className="text-3xl font-bold flex flex-wrap md:flex-nowrap gap-2 min-h-[9rem] md:min-h-0 ">
+      <div
+        className="mt-10 md:-mt-40 w-full md:w-1/2"
+        data-aos="fade-right"
+        data-aos-delay="200"
+      >
+        <h3
+          className="text-3xl font-bold mt-10"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          Hello, It's Me
+        </h3>
+        <h1
+          className="text-4xl font-bold text-[#00fbff] my-2"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          Van Anh Quan
+        </h1>
+        <h3
+          className="text-3xl font-bold flex flex-wrap md:flex-nowrap gap-2 min-h-[9rem] md:min-h-0 "
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           And I'm a
           <span
             ref={textRef}
@@ -37,7 +57,11 @@ const Hero = () => {
           ></span>
         </h3>
 
-        <div className="mt-12 mb-10 flex flex-row gap-6">
+        <div
+          className="mt-12 mb-10 flex flex-row gap-6"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
           {SOCIAL_ICONS.map((icon) => {
             const IconComponent = icon.Icon;
             return (
@@ -53,14 +77,20 @@ const Hero = () => {
           })}
         </div>
 
-        <Button
-          content="Download CV"
-          download={true}
-          fileName="VanAnhQuan_CV.pdf"
-        />
+        <div data-aos="fade-up" data-aos-delay="700">
+          <Button
+            content="Download CV"
+            download={true}
+            fileName="VanAnhQuan_CV.pdf"
+          />
+        </div>
       </div>
 
-      <div className="mt-20 md:mt-0 animate-float">
+      <div
+        className="mt-20 md:mt-0 animate-float"
+        data-aos="fade-left"
+        data-aos-delay="400"
+      >
         <img
           src="/assets/avt.png"
           alt="home"

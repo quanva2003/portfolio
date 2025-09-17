@@ -4,11 +4,19 @@ import Button from "./Button";
 const Contact = () => {
   return (
     <section id="contact" className="min-h-screen w-full px-[9%] py-28">
-      <h2 className="text-4xl font-bold text-center mb-20">
+      <h2
+        className="text-4xl font-bold text-center mb-20"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         Contact <span className="text-[#00fbff]">Me</span>
       </h2>
 
-      <form className="max-w-xl mx-auto text-center mb-12">
+      <form
+        className="max-w-xl mx-auto text-center mb-12"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
         <div className="flex flex-wrap justify-between mb-2">
           <input
             type="text"

@@ -4,15 +4,21 @@ import { workExperience } from "../data/workExperience";
 const WorkExperience = () => {
   return (
     <section id="work-experience" className="min-h-screen w-full px-[9%] py-28">
-      <h2 className="text-4xl font-bold text-center mb-20">
+      <h2
+        className="text-4xl font-bold text-center mb-20"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         Work <span className="text-[#00fbff]">Experience</span>
       </h2>
 
       <div className="flex flex-col gap-8 mb-20">
-        {workExperience.map((experience) => (
+        {workExperience.map((experience, index) => (
           <div
             key={experience.id}
             className="bg-[#323946] p-8 rounded-3xl border-2 border-[#1f242d] hover:border-[#00fbff] hover:scale-[1.02] transition duration-500"
+            data-aos="fade-up"
+            data-aos-delay={`${300 + index * 200}`}
           >
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
               <div>

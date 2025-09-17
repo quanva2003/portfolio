@@ -3,3 +3,37 @@
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
+
+/* Parallax animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #323946;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00fbff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4d8;
+}

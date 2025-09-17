@@ -7,13 +7,22 @@ const Projects = () => {
       id="projects"
       className="min-h-screen w-full px-[9%] py-28 bg-[#323946]"
     >
-      <h2 className="text-4xl font-bold text-center mb-20 text-[#00fbff]">
+      <h2
+        className="text-4xl font-bold text-center mb-20 text-[#00fbff]"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         Projects
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {PROJECTS.map((project) => (
-          <div key={project.id} className="group">
+        {PROJECTS.map((project, index) => (
+          <div
+            key={project.id}
+            className="group"
+            data-aos="fade-up"
+            data-aos-delay={`${300 + index * 100}`}
+          >
             <div className="relative h-64 w-full rounded-3xl shadow-lg overflow-hidden">
               <img
                 src={project.image}
