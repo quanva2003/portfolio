@@ -7,7 +7,7 @@ const About = () => {
     >
       <div className="w-full md:w-1/2">
         <img
-          src="/src/assets/about(1).png"
+          src="/assets/about(1).png"
           alt="about"
           className="w-[34vw] h-[34vw] object-cover rounded-full shadow-[0_0_1rem_#00fbff] hover:shadow-none transition duration-500"
         />

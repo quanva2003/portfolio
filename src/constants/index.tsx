@@ -70,21 +70,21 @@ export const SOCIAL_ICONS = [
 export const PROJECTS = [
   {
     id: 1,
-    image: "/src/assets/tamda-project.png",
+    image: "/assets/tamda-project.png",
     title: "Tamda Project",
     description:
       "A logistics management platform to streamline shipment scheduling for bulk vendor orders",
   },
   {
     id: 2,
-    image: "/src/assets/fastcare-project.png",
+    image: "/assets/fastcare-project.png",
     title: "Fastcare Project",
     description:
       "A website for phone accessories offers cases, chargers, headphones, and more with secure shopping, fast delivery, and excellent customer support.",
   },
   {
     id: 3,
-    image: "/src/assets/skyline-project.png",
+    image: "/assets/skyline-project.png",
     title: "Skyline Mobile App",
     description:
       "A cross-platform mobile application for schools to facilitate communication between homeroom teachers and parents.",

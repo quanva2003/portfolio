@@ -62,7 +62,7 @@ const Hero = () => {
 
       <div className="mt-20 md:mt-0 animate-float">
         <img
-          src="/src/assets/avt.png"
+          src="/assets/avt.png"
           alt="home"
           className="md:h-[85vh] h-[60vh] object-cover"
         />
