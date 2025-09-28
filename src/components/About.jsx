@@ -11,7 +11,7 @@ const About = () => {
         data-aos-delay="200"
       >
         <img
-          src="/assets/about(1).png"
+          src="/wuan.png"
           alt="about"
           className="w-[34vw] h-[34vw] object-cover rounded-full shadow-[0_0_1rem_#00fbff] hover:shadow-none transition duration-500"
         />

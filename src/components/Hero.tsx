@@ -92,7 +92,7 @@ const Hero = () => {
         data-aos-delay="400"
       >
         <img
-          src="/assets/avt.png"
+          src="/wuan.svg"
           alt="home"
           className="md:h-[85vh] h-[60vh] object-cover"
         />
