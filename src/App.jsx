@@ -1,5 +1,4 @@
 import React from "react";
-import { Anchor } from "antd";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
