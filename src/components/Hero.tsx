@@ -67,9 +67,11 @@ const Hero = () => {
             return (
               <a
                 key={icon.id}
+                href={icon.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={icon.name}
                 className="hover:cursor-pointer inline-flex justify-center items-center md:w-14 md:h-14 w-10 h-10 border-2 border-[#00fbff] rounded-full text-xl text-[#00fbff] hover:bg-[#00fbff] hover:text-[#323946] hover:shadow-[0_0_1rem_#00fbff] transition duration-300 group"
-                title={icon.name}
-                onClick={() => window.open(icon.link, "_blank")}
               >
                 <IconComponent className="text-[#00fbff] group-hover:text-[#323946] transition duration-300" />
               </a>
