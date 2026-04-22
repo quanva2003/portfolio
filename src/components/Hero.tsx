@@ -31,13 +31,13 @@ const Hero = () => {
         data-aos="fade-right"
         data-aos-delay="200"
       >
-        <h3
+        <p
           className="text-3xl font-bold mt-10"
           data-aos="fade-up"
           data-aos-delay="300"
         >
           Hello, It's Me
-        </h3>
+        </p>
         <h1
           className="text-4xl font-bold text-[#00fbff] my-2"
           data-aos="fade-up"
@@ -45,7 +45,7 @@ const Hero = () => {
         >
           Van Anh Quan
         </h1>
-        <h3
+        <p
           className="text-3xl font-bold flex flex-wrap md:flex-nowrap gap-2 min-h-[9rem] md:min-h-0 "
           data-aos="fade-up"
           data-aos-delay="500"
@@ -55,7 +55,7 @@ const Hero = () => {
             ref={textRef}
             className="text-[#00fbff] block md:inline-block text-nowrap"
           ></span>
-        </h3>
+        </p>
 
         <div
           className="mt-12 mb-10 flex flex-row gap-6"
