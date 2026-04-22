@@ -50,9 +50,11 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#000000" />
     <link rel="canonical" href="https://quanva-portfolio.vercel.app/" />
+    <!-- Preload hero avatar so it's ready before first paint -->
+    <link rel="preload" as="image" href="/wuan.svg" fetchpriority="high" />
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
