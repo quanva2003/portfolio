@@ -1,4 +1,4 @@
-import { PROJECTS } from "../constants";
+import { PROJECTS } from "../../data/projects";
 
 const Projects = () => {
   return (

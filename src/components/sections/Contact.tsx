@@ -1,4 +1,4 @@
-import { LinkButton } from "./Button";
+import { LinkButton } from "../ui/Button";
 
 const Contact = () => {
   return (

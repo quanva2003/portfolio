@@ -1,6 +1,6 @@
 import { MenuOutlined } from "@ant-design/icons";
 import { useState, useEffect } from "react";
-import { MENU_ITEMS, HEADER_CONFIG } from "../constants";
+import { MENU_ITEMS, HEADER_CONFIG } from "../../config/header";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState<string | null>("home");

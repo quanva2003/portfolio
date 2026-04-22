@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import { SOCIAL_ICONS } from "../constants";
-import { DownloadButton } from "./Button";
+import { SOCIAL_ICONS } from "../../data/socialIcons";
+import { DownloadButton } from "../ui/Button";
 
 const Hero = () => {
   const textRef = useRef<HTMLElement>(null);
