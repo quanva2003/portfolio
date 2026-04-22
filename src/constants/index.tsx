@@ -36,7 +36,7 @@ export const HEADER_CONFIG = {
 import {
   FacebookIcon,
   LinkedInIcon,
-  InstagramIcon,
+  GithubIcon,
   GmailIcon,
 } from "../components/icons";
 
@@ -57,7 +57,7 @@ export const SOCIAL_ICONS = [
     id: "github",
     name: "Github",
     link: "https://github.com/quanva2003",
-    Icon: InstagramIcon,
+    Icon: GithubIcon,
   },
   {
     id: "gmail",
