@@ -1,18 +1,11 @@
 import { PROJECTS } from "../../data/projects";
+import { Section } from "../layout/Section";
+import { SectionHeading } from "../ui/SectionHeading";
 
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="min-h-screen w-full px-gutter py-28 bg-bg-secondary"
-    >
-      <h2
-        className="text-4xl font-bold text-center mb-20 text-accent"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        Projects
-      </h2>
+    <Section id="projects" labelledBy="projects-heading" className="bg-bg-secondary">
+      <SectionHeading id="projects-heading" highlight="Projects" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {PROJECTS.map((project, index) => (
@@ -41,7 +34,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 };
 

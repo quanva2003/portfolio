@@ -1,15 +1,11 @@
 import { LinkButton } from "../ui/Button";
+import { Section } from "../layout/Section";
+import { SectionHeading } from "../ui/SectionHeading";
 
 const Contact = () => {
   return (
-    <section id="contact" className="min-h-screen w-full px-gutter py-28">
-      <h2
-        className="text-4xl font-bold text-center mb-20"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        Contact <span className="text-accent">Me</span>
-      </h2>
+    <Section id="contact" labelledBy="contact-heading">
+      <SectionHeading id="contact-heading" prefix="Contact" highlight="Me" />
 
       <form
         className="max-w-xl mx-auto text-center mb-12"
@@ -50,7 +46,7 @@ const Contact = () => {
 
         <LinkButton href="#" content="Send Message" />
       </form>
-    </section>
+    </Section>
   );
 };
 

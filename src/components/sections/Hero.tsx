@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { SOCIAL_ICONS } from "../../data/socialIcons";
 import { DownloadButton } from "../ui/Button";
+import { Section } from "../layout/Section";
 
 const Hero = () => {
   const textRef = useRef<HTMLElement>(null);
@@ -21,9 +22,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section
+    <Section
       id="home"
-      className="min-h-screen w-full px-gutter py-28 flex flex-col md:flex-row justify-center items-center"
+      labelledBy="home-heading"
+      className="flex flex-col md:flex-row justify-center items-center"
     >
       <div
         className="mt-10 md:-mt-40 w-full md:w-1/2"
@@ -38,6 +40,7 @@ const Hero = () => {
           Hello, It's Me
         </p>
         <h1
+          id="home-heading"
           className="text-4xl font-bold text-accent my-2"
           data-aos="fade-up"
           data-aos-delay="400"
@@ -94,7 +97,7 @@ const Hero = () => {
           className="md:h-[85vh] h-[60vh] object-cover"
         />
       </div>
-    </section>
+    </Section>
   );
 };
 

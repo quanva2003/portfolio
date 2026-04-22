@@ -1,15 +1,15 @@
 import { WORK_EXPERIENCE } from "../../data/workExperience";
+import { Section } from "../layout/Section";
+import { SectionHeading } from "../ui/SectionHeading";
 
 const WorkExperience = () => {
   return (
-    <section id="work-experience" className="min-h-screen w-full px-gutter py-28">
-      <h2
-        className="text-4xl font-bold text-center mb-20"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        Work <span className="text-accent">Experience</span>
-      </h2>
+    <Section id="work-experience" labelledBy="work-experience-heading">
+      <SectionHeading
+        id="work-experience-heading"
+        prefix="Work"
+        highlight="Experience"
+      />
 
       <div className="flex flex-col gap-8 mb-20">
         {WORK_EXPERIENCE.map((experience, index) => (
@@ -47,7 +47,7 @@ const WorkExperience = () => {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 };
 
