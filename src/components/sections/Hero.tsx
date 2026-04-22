@@ -1,25 +1,11 @@
-import { useEffect, useRef } from "react";
-import Typed from "typed.js";
 import { SOCIAL_ICONS } from "../../data/socialIcons";
 import { DownloadButton } from "../ui/Button";
 import { Section } from "../layout/Section";
+import { useInView } from "../../lib/useInView";
 
 const Hero = () => {
-  const textRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const typed = new Typed(textRef.current!, {
-      strings: ["Frontend Developer", "Mobile Developer"],
-      typeSpeed: 100,
-      backSpeed: 100,
-      backDelay: 1000,
-      loop: true,
-    });
-
-    return () => {
-      typed.destroy();
-    };
-  }, []);
+  const { ref: contentRef, isInView: contentInView } = useInView<HTMLDivElement>();
+  const { ref: imageRef, isInView: imageInView } = useInView<HTMLDivElement>();
 
   return (
     <Section
@@ -28,42 +14,28 @@ const Hero = () => {
       className="flex flex-col md:flex-row justify-center items-center"
     >
       <div
-        className="mt-10 md:-mt-40 w-full md:w-1/2"
-        data-aos="fade-right"
-        data-aos-delay="200"
+        ref={contentRef}
+        className={`mt-10 md:-mt-40 w-full md:w-1/2 transition-all duration-700 delay-100 ${
+          contentInView
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 translate-x-8"
+        }`}
       >
-        <p
-          className="text-3xl font-bold mt-10"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          Hello, It's Me
-        </p>
+        <p className="text-3xl font-bold mt-10">Hello, It's Me</p>
         <h1
           id="home-heading"
           className="text-4xl font-bold text-accent my-2"
-          data-aos="fade-up"
-          data-aos-delay="400"
         >
           Van Anh Quan
         </h1>
-        <p
-          className="text-3xl font-bold flex flex-wrap md:flex-nowrap gap-2 min-h-[9rem] md:min-h-0 "
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
-          And I'm a
-          <span
-            ref={textRef}
-            className="text-accent block md:inline-block text-nowrap"
-          ></span>
+        <p className="text-3xl font-bold flex flex-wrap md:flex-nowrap gap-2 min-h-[9rem] md:min-h-0">
+          And I'm a{" "}
+          <span className="text-accent block md:inline-block typed-text">
+            Frontend Developer
+          </span>
         </p>
 
-        <div
-          className="mt-12 mb-10 flex flex-row gap-6"
-          data-aos="fade-up"
-          data-aos-delay="600"
-        >
+        <div className="mt-12 mb-10 flex flex-row gap-6">
           {SOCIAL_ICONS.map((icon) => {
             const IconComponent = icon.Icon;
             return (
@@ -81,19 +53,23 @@ const Hero = () => {
           })}
         </div>
 
-        <div data-aos="fade-up" data-aos-delay="700">
-          <DownloadButton content="Download CV" fileName="VanAnhQuan_CV.pdf" />
-        </div>
+        <DownloadButton content="Download CV" fileName="VanAnhQuan_CV.pdf" />
       </div>
 
       <div
-        className="mt-20 md:mt-0 animate-float"
-        data-aos="fade-left"
-        data-aos-delay="400"
+        ref={imageRef}
+        className={`mt-20 md:mt-0 animate-float transition-all duration-700 delay-200 ${
+          imageInView
+            ? "opacity-100 -translate-x-0"
+            : "opacity-0 -translate-x-8"
+        }`}
       >
         <img
           src="/wuan.svg"
-          alt="home"
+          alt="Van Anh Quan – illustrated avatar"
+          width="600"
+          height="600"
+          fetchPriority="high"
           className="md:h-[85vh] h-[60vh] object-cover"
         />
       </div>
