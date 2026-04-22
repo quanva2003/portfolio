@@ -4,10 +4,10 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen w-full px-[9%] py-28 bg-[#323946]"
+      className="min-h-screen w-full px-gutter py-28 bg-bg-secondary"
     >
       <h2
-        className="text-4xl font-bold text-center mb-20 text-[#00fbff]"
+        className="text-4xl font-bold text-center mb-20 text-accent"
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -28,7 +28,7 @@ const Projects = () => {
                 alt="portfolio"
                 className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
               />
-              <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-[#00fbff] to-black/10 flex justify-center items-center flex-col p-16 text-center translate-y-full group-hover:translate-y-0 transition duration-500">
+              <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-accent to-black/10 flex justify-center items-center flex-col p-16 text-center translate-y-full group-hover:translate-y-0 transition duration-500">
                 <h4 className="text-2xl font-semibold">{project.title}</h4>
                 <p className="text-base my-1 mb-4">{project.description}</p>
               </div>

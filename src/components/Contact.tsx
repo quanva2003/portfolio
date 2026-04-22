@@ -2,13 +2,13 @@ import { LinkButton } from "./Button";
 
 const Contact = () => {
   return (
-    <section id="contact" className="min-h-screen w-full px-[9%] py-28">
+    <section id="contact" className="min-h-screen w-full px-gutter py-28">
       <h2
         className="text-4xl font-bold text-center mb-20"
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        Contact <span className="text-[#00fbff]">Me</span>
+        Contact <span className="text-accent">Me</span>
       </h2>
 
       <form
@@ -20,12 +20,12 @@ const Contact = () => {
           <input
             type="text"
             placeholder="Full Name"
-            className="w-full md:w-[49%] p-4 text-base text-[#ffffffe2] bg-[#323946] rounded-lg mb-4"
+            className="w-full md:w-[49%] p-4 text-base text-text-primary bg-bg-secondary rounded-lg mb-4"
           />
           <input
             type="email"
             placeholder="Email Address"
-            className="w-full md:w-[49%] p-4 text-base text-[#ffffffe2] bg-[#323946] rounded-lg mb-4"
+            className="w-full md:w-[49%] p-4 text-base text-text-primary bg-bg-secondary rounded-lg mb-4"
           />
         </div>
 
@@ -33,19 +33,19 @@ const Contact = () => {
           <input
             type="number"
             placeholder="Mobile Number"
-            className="w-full md:w-[49%] p-4 text-base text-[#ffffffe2] bg-[#323946] rounded-lg mb-4"
+            className="w-full md:w-[49%] p-4 text-base text-text-primary bg-bg-secondary rounded-lg mb-4"
           />
           <input
             type="text"
             placeholder="Email Subject"
-            className="w-full md:w-[49%] p-4 text-base text-[#ffffffe2] bg-[#323946] rounded-lg mb-4"
+            className="w-full md:w-[49%] p-4 text-base text-text-primary bg-bg-secondary rounded-lg mb-4"
           />
         </div>
 
         <textarea
           placeholder="Your Message"
           rows={10}
-          className="w-full p-4 text-base text-[#ffffffe2] bg-[#323946] rounded-lg mb-4 resize-none"
+          className="w-full p-4 text-base text-text-primary bg-bg-secondary rounded-lg mb-4 resize-none"
         />
 
         <LinkButton href="#" content="Send Message" />

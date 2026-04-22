@@ -2,7 +2,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen w-full px-[9%] py-28 flex flex-col md:flex-row justify-center items-center gap-8 bg-[#323946]"
+      className="min-h-screen w-full px-gutter py-28 flex flex-col md:flex-row justify-center items-center gap-8 bg-bg-secondary"
     >
       <div
         className="w-full md:w-1/2"
@@ -26,7 +26,7 @@ const About = () => {
           data-aos="fade-up"
           data-aos-delay="400"
         >
-          About <span className="text-[#00fbff]">Me</span>
+          About <span className="text-accent">Me</span>
         </h2>
         <p className="text-lg my-8" data-aos="fade-up" data-aos-delay="500">
           Innovative Freelance Front-End Developer with 1+ Years at Upwork

@@ -3,7 +3,8 @@
     "allow": [
       "Bash(git mv *)",
       "Bash(npm run *)",
-      "Bash(node_modules/.bin/tsc --noEmit)"
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(git rm *)"
     ]
   }
 }

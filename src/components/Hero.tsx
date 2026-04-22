@@ -23,7 +23,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full px-[9%] py-28 flex flex-col md:flex-row justify-center items-center"
+      className="min-h-screen w-full px-gutter py-28 flex flex-col md:flex-row justify-center items-center"
     >
       <div
         className="mt-10 md:-mt-40 w-full md:w-1/2"
@@ -38,7 +38,7 @@ const Hero = () => {
           Hello, It's Me
         </p>
         <h1
-          className="text-4xl font-bold text-[#00fbff] my-2"
+          className="text-4xl font-bold text-accent my-2"
           data-aos="fade-up"
           data-aos-delay="400"
         >
@@ -52,7 +52,7 @@ const Hero = () => {
           And I'm a
           <span
             ref={textRef}
-            className="text-[#00fbff] block md:inline-block text-nowrap"
+            className="text-accent block md:inline-block text-nowrap"
           ></span>
         </p>
 
@@ -70,9 +70,9 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={icon.name}
-                className="hover:cursor-pointer inline-flex justify-center items-center md:w-14 md:h-14 w-10 h-10 border-2 border-[#00fbff] rounded-full text-xl text-[#00fbff] hover:bg-[#00fbff] hover:text-[#323946] hover:shadow-[0_0_1rem_#00fbff] transition duration-300 group"
+                className="hover:cursor-pointer inline-flex justify-center items-center md:w-14 md:h-14 w-10 h-10 border-2 border-accent rounded-full text-xl text-accent hover:bg-accent hover:text-bg-secondary hover:shadow-[0_0_1rem_#00fbff] transition duration-300 group"
               >
-                <IconComponent className="text-[#00fbff] group-hover:text-[#323946] transition duration-300" />
+                <IconComponent className="text-accent group-hover:text-bg-secondary transition duration-300" />
               </a>
             );
           })}

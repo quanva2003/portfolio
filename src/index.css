@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --color-bg-primary: #1f242d;
+  --color-bg-secondary: #323946;
+  --color-accent: #00fbff;
+  --color-text-primary: #ffffffe2;
+  --color-text-muted: #c4c4c4;
+  --spacing-gutter: 9%;
+}
+
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
@@ -26,11 +35,11 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #323946;
+  background: var(--color-bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00fbff;
+  background: var(--color-accent);
   border-radius: 4px;
 }
 
