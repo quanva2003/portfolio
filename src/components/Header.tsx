@@ -1,9 +1,9 @@
 import { MenuOutlined } from "@ant-design/icons";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { MENU_ITEMS, HEADER_CONFIG } from "../constants";
 
 const Header = () => {
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState<string | null>("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
@@ -28,10 +28,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
     <header
       className={`fixed top-0 left-0 w-full p-4 md:px-[9%] bg-[#1f242d] flex justify-between items-center z-50 ${
@@ -51,7 +47,7 @@ const Header = () => {
       <div className="flex items-center">
         <div
           className="text-[#ffffffe2] text-2xl cursor-pointer md:hidden"
-          onClick={toggleMenu}
+          onClick={() => setMenuOpen(!menuOpen)}
         >
           <MenuOutlined />
         </div>

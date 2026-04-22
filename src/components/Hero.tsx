@@ -1,14 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { SOCIAL_ICONS } from "../constants";
-import Button from "./Button";
+import { DownloadButton } from "./Button";
 
 const Hero = () => {
-  const textRef = useRef(null);
+  const textRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // Typed.js initialization
-    const typed = new Typed(textRef.current, {
+    const typed = new Typed(textRef.current!, {
       strings: ["Frontend Developer", "Mobile Developer"],
       typeSpeed: 100,
       backSpeed: 100,
@@ -80,11 +79,7 @@ const Hero = () => {
         </div>
 
         <div data-aos="fade-up" data-aos-delay="700">
-          <Button
-            content="Download CV"
-            download={true}
-            fileName="VanAnhQuan_CV.pdf"
-          />
+          <DownloadButton content="Download CV" fileName="VanAnhQuan_CV.pdf" />
         </div>
       </div>
 

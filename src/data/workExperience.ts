@@ -1,4 +1,13 @@
-export const workExperience = [
+export interface WorkExperience {
+  readonly id: number;
+  readonly company: string;
+  readonly position: string;
+  readonly duration: string;
+  readonly description: string;
+  readonly technologies: readonly string[];
+}
+
+export const WORK_EXPERIENCE: readonly WorkExperience[] = [
   {
     id: 1,
     company: "GENERAL ERA DIGITAL SOLUTION JOINT STOCK COMPANY",

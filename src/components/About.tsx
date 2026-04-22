@@ -1,4 +1,3 @@
-import React from "react";
 const About = () => {
   return (
     <section
@@ -36,12 +35,6 @@ const About = () => {
           Eager to Bring Problem-Solving and Critical Thinking Skills to Your
           Team.
         </p>
-        {/* <a
-          href="#"
-          className="inline-block px-7 py-3 bg-[#00fbff] rounded-full shadow-[0_0_1rem_#00fbff] text-lg text-[#323946] font-semibold hover:shadow-none transition duration-500"
-        >
-          Read More
-        </a> */}
       </div>
     </section>
   );

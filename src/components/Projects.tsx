@@ -1,4 +1,3 @@
-import React from "react";
 import { PROJECTS } from "../constants";
 
 const Projects = () => {
@@ -34,7 +33,6 @@ const Projects = () => {
                 <p className="text-base my-1 mb-4">{project.description}</p>
               </div>
             </div>
-            {/* Title hiển thị dưới image trên mobile */}
             <div className="md:hidden mt-4 text-center">
               <h4 className="text-xl font-semibold text-white">
                 {project.title}

@@ -1,5 +1,4 @@
-import React from "react";
-import Button from "./Button";
+import { LinkButton } from "./Button";
 
 const Contact = () => {
   return (
@@ -45,11 +44,11 @@ const Contact = () => {
 
         <textarea
           placeholder="Your Message"
-          rows="10"
+          rows={10}
           className="w-full p-4 text-base text-[#ffffffe2] bg-[#323946] rounded-lg mb-4 resize-none"
-        ></textarea>
+        />
 
-        <Button href="#" content="Send Message" onClick={() => {}} />
+        <LinkButton href="#" content="Send Message" />
       </form>
     </section>
   );

@@ -1,38 +1,4 @@
-export const MENU_ITEMS = [
-  {
-    id: "home",
-    label: "Home",
-    href: "#home",
-  },
-  {
-    id: "about",
-    label: "About",
-    href: "#about",
-  },
-  {
-    id: "work-experience",
-    label: "Work Experience",
-    href: "#work-experience",
-  },
-  {
-    id: "projects",
-    label: "Projects",
-    href: "#projects",
-  },
-  {
-    id: "contact",
-    label: "Contact",
-    href: "#contact",
-  },
-];
-
-export const HEADER_CONFIG = {
-  brandName: "QuanVA's",
-  brandHighlight: "Portfolio",
-  stickyThreshold: 100,
-  scrollOffset: 150,
-};
-
+import type { ComponentType } from "react";
 import {
   FacebookIcon,
   LinkedInIcon,
@@ -40,7 +6,42 @@ import {
   GmailIcon,
 } from "../components/icons";
 
-export const SOCIAL_ICONS = [
+interface MenuItem {
+  readonly id: string;
+  readonly label: string;
+  readonly href: string;
+}
+
+export const MENU_ITEMS: readonly MenuItem[] = [
+  { id: "home", label: "Home", href: "#home" },
+  { id: "about", label: "About", href: "#about" },
+  { id: "work-experience", label: "Work Experience", href: "#work-experience" },
+  { id: "projects", label: "Projects", href: "#projects" },
+  { id: "contact", label: "Contact", href: "#contact" },
+];
+
+interface HeaderConfig {
+  readonly brandName: string;
+  readonly brandHighlight: string;
+  readonly stickyThreshold: number;
+  readonly scrollOffset: number;
+}
+
+export const HEADER_CONFIG: HeaderConfig = {
+  brandName: "QuanVA's",
+  brandHighlight: "Portfolio",
+  stickyThreshold: 100,
+  scrollOffset: 150,
+};
+
+interface SocialIcon {
+  readonly id: string;
+  readonly name: string;
+  readonly link: string;
+  readonly Icon: ComponentType<{ className?: string }>;
+}
+
+export const SOCIAL_ICONS: readonly SocialIcon[] = [
   {
     id: "facebook",
     name: "Facebook",
@@ -67,7 +68,14 @@ export const SOCIAL_ICONS = [
   },
 ];
 
-export const PROJECTS = [
+interface Project {
+  readonly id: number;
+  readonly image: string;
+  readonly title: string;
+  readonly description: string;
+}
+
+export const PROJECTS: readonly Project[] = [
   {
     id: 1,
     image: "/assets/tamda-project.png",

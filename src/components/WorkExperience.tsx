@@ -1,5 +1,4 @@
-import React from "react";
-import { workExperience } from "../data/workExperience";
+import { WORK_EXPERIENCE } from "../data/workExperience";
 
 const WorkExperience = () => {
   return (
@@ -13,7 +12,7 @@ const WorkExperience = () => {
       </h2>
 
       <div className="flex flex-col gap-8 mb-20">
-        {workExperience.map((experience, index) => (
+        {WORK_EXPERIENCE.map((experience, index) => (
           <div
             key={experience.id}
             className="bg-[#323946] p-8 rounded-3xl border-2 border-[#1f242d] hover:border-[#00fbff] hover:scale-[1.02] transition duration-500"
@@ -31,9 +30,9 @@ const WorkExperience = () => {
                 <p className="text-gray-300 text-sm">{experience.duration}</p>
               </div>
               <div className="flex flex-wrap gap-2 mt-4 lg:mt-0">
-                {experience.technologies.map((tech, index) => (
+                {experience.technologies.map((tech, techIndex) => (
                   <span
-                    key={index}
+                    key={techIndex}
                     className="px-3 py-1 bg-[#00fbff] text-[#323946] text-sm font-medium rounded-full"
                   >
                     {tech}
