@@ -7,7 +7,7 @@ export function LinkButton({ href, content }: LinkButtonProps) {
   return (
     <a
       href={href}
-      className="hover:cursor-pointer inline-block px-7 py-3 bg-accent rounded-full shadow-[0_0_1rem_#00fbff] text-lg text-bg-secondary font-semibold hover:shadow-none transition duration-500"
+      className="hover:cursor-pointer inline-block px-7 py-3 bg-accent rounded-full shadow-[0_0_1rem_#00fbff] text-lg text-bg font-semibold hover:shadow-none transition duration-500"
     >
       {content}
     </a>
@@ -34,7 +34,7 @@ export function DownloadButton({ content, fileName }: DownloadButtonProps) {
       href={`/cv/${fileName}`}
       download={fileName}
       onClick={handleDownload}
-      className="hover:cursor-pointer inline-block px-7 py-3 bg-accent rounded-full shadow-[0_0_1rem_#00fbff] text-lg text-bg-secondary font-semibold hover:shadow-none transition duration-500"
+      className="hover:cursor-pointer inline-block px-7 py-3 bg-accent rounded-full shadow-[0_0_1rem_#00fbff] text-lg text-bg font-semibold hover:shadow-none transition duration-500"
     >
       {content}
     </a>

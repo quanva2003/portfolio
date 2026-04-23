@@ -16,7 +16,7 @@ function ExperienceCard({
     <div
       ref={ref}
       style={{ transitionDelay: delay }}
-      className={`bg-bg-secondary p-8 rounded-3xl border-2 border-bg-primary hover:border-accent hover:scale-[1.02] transition duration-500 ${
+      className={`bg-bg-elevated p-8 rounded-3xl border-2 border-bg hover:border-accent hover:scale-[1.02] transition duration-500 ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
@@ -34,7 +34,7 @@ function ExperienceCard({
           {experience.technologies.map((tech, techIndex) => (
             <span
               key={techIndex}
-              className="px-3 py-1 bg-accent text-bg-secondary text-sm font-medium rounded-full"
+              className="px-3 py-1 bg-accent text-bg text-sm font-medium rounded-full"
             >
               {tech}
             </span>

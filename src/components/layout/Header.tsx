@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full p-4 md:px-gutter bg-bg-primary flex justify-between items-center z-50 ${
+      className={`fixed top-0 left-0 w-full p-4 md:px-gutter bg-bg flex justify-between items-center z-50 ${
         isSticky ? "border-b border-black/20" : ""
       }`}
     >
@@ -72,7 +72,7 @@ const Header = () => {
           id="mobile-nav"
           className={`${
             menuOpen
-              ? "block absolute top-16 left-0 w-full bg-bg-primary p-4"
+              ? "block absolute top-16 left-0 w-full bg-bg p-4"
               : "hidden"
           } md:block`}
         >
