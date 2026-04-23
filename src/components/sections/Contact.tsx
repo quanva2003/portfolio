@@ -22,7 +22,8 @@ const Contact = () => {
         method: 'POST',
         body: data,
       });
-      if (res.ok) {
+      const json = await res.json();
+      if (json.success) {
         setStatus('success');
         form.reset();
       } else {
