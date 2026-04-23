@@ -1,77 +1,45 @@
-import { SOCIAL_ICONS } from "../../data/socialIcons";
-import { DownloadButton } from "../ui/Button";
-import { Section } from "../layout/Section";
-import { useInView } from "../../lib/useInView";
+import { Section } from '../layout/Section';
+import { LinkButton } from '../ui/Button';
+import { HeroSpotlight } from './hero/HeroSpotlight';
+import { HeroPortrait } from './hero/HeroPortrait';
 
 const Hero = () => {
-  const { ref: contentRef, isInView: contentInView } = useInView<HTMLDivElement>();
-  const { ref: imageRef, isInView: imageInView } = useInView<HTMLDivElement>();
-
   return (
-    <Section
-      id="home"
-      labelledBy="home-heading"
-      className="flex flex-col md:flex-row justify-center items-center"
-    >
-      <div
-        ref={contentRef}
-        className={`mt-10 md:-mt-40 w-full md:w-1/2 transition-all duration-700 delay-100 ${
-          contentInView
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 translate-x-8"
-        }`}
-      >
-        <p className="text-3xl font-bold mt-10">Hello, It's Me</p>
-        <h1
-          id="home-heading"
-          className="text-4xl font-bold text-accent my-2"
-        >
-          Van Anh Quan
-        </h1>
-        <p className="text-3xl font-bold flex flex-wrap md:flex-nowrap gap-2 min-h-[9rem] md:min-h-0">
-          And I'm a{" "}
-          <span className="text-accent block md:inline-block typed-text">
-            Frontend Developer
-          </span>
-        </p>
+    <Section id="home" labelledBy="hero-heading">
+      <div className="relative min-h-[85vh] grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-12 md:gap-16 items-center">
+        <HeroSpotlight />
 
-        <div className="mt-12 mb-10 flex flex-row gap-6">
-          {SOCIAL_ICONS.map((icon) => {
-            const IconComponent = icon.Icon;
-            return (
-              <a
-                key={icon.id}
-                href={icon.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={icon.name}
-                className="hover:cursor-pointer inline-flex justify-center items-center md:w-14 md:h-14 w-10 h-10 border-2 border-accent rounded-full text-xl text-accent hover:bg-accent hover:text-bg hover:shadow-[0_0_1rem_#00fbff] transition duration-300 group"
-              >
-                <IconComponent className="text-accent group-hover:text-bg transition duration-300" />
-              </a>
-            );
-          })}
+        {/* Text block */}
+        <div className="relative z-10 space-y-8">
+          <p className="label">Frontend Developer · Ho Chi Minh City</p>
+
+          <h1 id="hero-heading">
+            <span>Building </span>
+            <span className="text-gradient">interfaces </span>
+            <br className="hidden md:block" />
+            <span>that feel right.</span>
+          </h1>
+
+          <p className="max-w-prose text-lg">
+            I build web and mobile products with React and React Native.
+            I care about performance on mid-range devices — because that's
+            what most users in Vietnam actually have.
+          </p>
+
+          <div className="flex flex-wrap gap-4 pt-4">
+            <LinkButton variant="primary" href="#projects">
+              View work →
+            </LinkButton>
+            <LinkButton variant="ghost" href="#contact">
+              Get in touch
+            </LinkButton>
+          </div>
         </div>
 
-        <DownloadButton content="Download CV" fileName="VanAnhQuan_CV.pdf" />
-      </div>
-
-      <div
-        ref={imageRef}
-        className={`mt-20 md:mt-0 animate-float transition-all duration-700 delay-200 ${
-          imageInView
-            ? "opacity-100 -translate-x-0"
-            : "opacity-0 -translate-x-8"
-        }`}
-      >
-        <img
-          src="/wuan.svg"
-          alt="Van Anh Quan – illustrated avatar"
-          width="600"
-          height="600"
-          fetchPriority="high"
-          className="md:h-[85vh] h-[60vh] object-cover"
-        />
+        {/* Portrait */}
+        <div className="relative z-10 justify-self-center md:justify-self-end">
+          <HeroPortrait />
+        </div>
       </div>
     </Section>
   );
