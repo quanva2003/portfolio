@@ -27,9 +27,10 @@
       property="og:description"
       content="Portfolio của Văn Anh Quân - Frontend Developer với kinh nghiệm trong React, React Native, và các công nghệ web hiện đại."
     />
-    <meta property="og:image" content="/assets/avt.png" />
+    <meta property="og:image" content="https://quanva-portfolio.vercel.app/og-image.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/webp" />
     <meta property="og:url" content="https://quanva-portfolio.vercel.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="QuanVA's Portfolio" />
@@ -44,7 +45,7 @@
       name="twitter:description"
       content="Portfolio của Văn Anh Quân - Frontend Developer với kinh nghiệm trong React, React Native, và các công nghệ web hiện đại."
     />
-    <meta name="twitter:image" content="/assets/avt.png" />
+    <meta name="twitter:image" content="https://quanva-portfolio.vercel.app/og-image.webp" />
 
     <!-- Additional SEO Meta Tags -->
     <meta name="robots" content="index, follow" />
@@ -52,6 +53,25 @@
     <link rel="canonical" href="https://quanva-portfolio.vercel.app/" />
     <!-- Preload hero avatar so it's ready before first paint -->
     <link rel="preload" as="image" href="/wuan.svg" fetchpriority="high" />
+
+    <!-- JSON-LD Person schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Văn Anh Quân",
+      "alternateName": "QuanVA",
+      "url": "https://quanva-portfolio.vercel.app",
+      "image": "https://quanva-portfolio.vercel.app/og-image.webp",
+      "jobTitle": "Frontend Developer",
+      "worksFor": { "@type": "Organization", "name": "Freelance" },
+      "sameAs": [
+        "https://github.com/quanva2003",
+        "https://www.linkedin.com/in/[your-linkedin]"
+      ],
+      "knowsAbout": ["React", "TypeScript", "React Native", "Next.js"]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -22,7 +22,7 @@ function ProjectCard({
     >
       <div className="relative h-64 w-full rounded-3xl shadow-lg overflow-hidden">
         <img
-          src={project.image}
+          src={project.thumbnail}
           alt={project.imageAlt}
           width="600"
           height="256"
@@ -49,7 +49,7 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {PROJECTS.map((project, index) => (
           <ProjectCard
-            key={project.id}
+            key={project.slug}
             project={project}
             delay={`${300 + index * 100}ms`}
           />
