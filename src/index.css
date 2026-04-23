@@ -53,36 +53,6 @@
   }
 }
 
-/* ─── Animations ──────────────────────────────────────────── */
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-20px); }
-}
-
-/* CSS typing effect — "Frontend Developer" (18 chars, steps match) */
-@keyframes typing {
-  from { width: 0 }
-  to   { width: 100% }
-}
-
-@keyframes blink-caret {
-  50% { border-color: transparent }
-}
-
-.typed-text {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid var(--color-accent);
-  animation:
-    typing 2s steps(18, end) 0.4s forwards,
-    blink-caret 0.75s step-end infinite;
-}
 
 /* ─── Accessibility ───────────────────────────────────────── */
 
