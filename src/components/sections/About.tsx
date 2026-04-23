@@ -7,7 +7,7 @@ const About = () => {
   const { ref: textRef, isInView: textInView } = useInView<HTMLDivElement>();
 
   return (
-    <Section id="about" labelledBy="about-heading" className="bg-bg-secondary">
+    <Section id="about" labelledBy="about-heading" className="bg-bg-elevated">
       <SectionHeading id="about-heading" prefix="About" highlight="Me" />
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-8">

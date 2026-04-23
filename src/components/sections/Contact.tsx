@@ -6,7 +6,7 @@ import { useInView } from "../../lib/useInView";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const inputClass =
-  "w-full p-4 text-base text-text-primary bg-bg-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-accent";
+  "w-full p-4 text-base text-text-primary bg-bg-elevated rounded-lg focus:outline-none focus:ring-2 focus:ring-accent";
 
 const Contact = () => {
   const [status, setStatus] = useState<Status>("idle");
@@ -121,7 +121,7 @@ const Contact = () => {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="hover:cursor-pointer inline-block px-7 py-3 bg-accent rounded-full shadow-[0_0_1rem_#00fbff] text-lg text-bg-secondary font-semibold hover:shadow-none transition duration-500 disabled:opacity-60 disabled:cursor-not-allowed"
+          className="hover:cursor-pointer inline-block px-7 py-3 bg-accent rounded-full shadow-[0_0_1rem_#00fbff] text-lg text-bg font-semibold hover:shadow-none transition duration-500 disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {status === "submitting" ? "Sending…" : "Send Message"}
         </button>
