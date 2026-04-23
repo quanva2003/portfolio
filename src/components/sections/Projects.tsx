@@ -31,7 +31,7 @@ function ProjectCard({
         />
         <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-accent to-black/10 flex justify-center items-center flex-col p-16 text-center translate-y-full group-hover:translate-y-0 transition duration-500">
           <h4 className="text-2xl font-semibold">{project.title}</h4>
-          <p className="text-base my-1 mb-4">{project.description}</p>
+          <p className="text-base my-1 mb-4">{project.tagline}</p>
         </div>
       </div>
       <div className="md:hidden mt-4 text-center">
