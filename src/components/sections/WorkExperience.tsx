@@ -1,26 +1,26 @@
-import { WORK_EXPERIENCE } from "../../data/workExperience";
-import { Section } from "../layout/Section";
-import { SectionHeading } from "../ui/SectionHeading";
-import { Card } from "../ui/Card";
-import { useInView } from "../../lib/useInView";
+import { motion } from 'framer-motion';
+import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { WORK_EXPERIENCE } from '../../data/workExperience';
+import { Section } from '../layout/Section';
+import { SectionHeading } from '../ui/SectionHeading';
+import { Card } from '../ui/Card';
 
 function ExperienceCard({
   experience,
-  delay,
+  index,
 }: {
   experience: (typeof WORK_EXPERIENCE)[number];
-  delay: string;
+  index: number;
 }) {
-  const { ref, isInView } = useInView<HTMLDivElement>();
+  const reduced = useReducedMotion();
   const isCurrent = experience.duration.includes('Present');
 
   return (
-    <div
-      ref={ref}
-      style={{ transitionDelay: delay }}
-      className={`transition-all duration-700 ${
-        isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      }`}
+    <motion.div
+      initial={reduced ? false : { opacity: 0, y: 24 }}
+      whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
     >
       <Card>
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
@@ -30,7 +30,7 @@ function ExperienceCard({
                 {experience.position}
               </h3>
               {isCurrent && (
-                <span className="font-mono text-xs px-2 py-0.5 rounded-full bg-accent/10 text-accent">
+                <span className="label text-accent border border-accent/30 px-2 py-0.5 rounded-full">
                   Current
                 </span>
               )}
@@ -44,7 +44,7 @@ function ExperienceCard({
             {experience.technologies.map((tech, techIndex) => (
               <span
                 key={techIndex}
-                className="px-3 py-1 bg-bg-elevated text-text-secondary text-xs font-medium rounded-full border border-border"
+                className="font-mono text-xs px-2 py-1 rounded border border-border text-text-muted"
               >
                 {tech}
               </span>
@@ -56,7 +56,7 @@ function ExperienceCard({
           {experience.description}
         </p>
       </Card>
-    </div>
+    </motion.div>
   );
 }
 
@@ -74,7 +74,7 @@ const WorkExperience = () => {
           <ExperienceCard
             key={experience.id}
             experience={experience}
-            delay={`${300 + index * 150}ms`}
+            index={index}
           />
         ))}
       </div>
