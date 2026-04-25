@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
-import { useReducedMotion } from '@/hooks/useReducedMotion';
-import { Section } from '../layout/Section';
-import { LinkButton } from '../ui/Button';
-import { HeroSpotlight } from './hero/HeroSpotlight';
-import { HeroPortrait } from './hero/HeroPortrait';
+import { motion } from "framer-motion";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { Section } from "../layout/Section";
+import { LinkButton } from "../ui/Button";
+import { HeroSpotlight } from "./hero/HeroSpotlight";
+import { HeroPortrait } from "./hero/HeroPortrait";
 
 const container = {
   hidden: { opacity: 0 },
@@ -12,7 +12,11 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+  },
 };
 
 const Hero = () => {
@@ -30,19 +34,21 @@ const Hero = () => {
           <motion.h1
             id="hero-heading"
             variants={container}
-            initial={reduced ? false : 'hidden'}
-            animate={reduced ? undefined : 'show'}
+            initial={reduced ? false : "hidden"}
+            animate={reduced ? undefined : "show"}
           >
             <motion.span variants={item}>Building </motion.span>
-            <motion.span variants={item} className="text-gradient">interfaces </motion.span>
+            <motion.span variants={item} className="text-gradient">
+              interfaces{" "}
+            </motion.span>
             <br className="hidden md:block" />
             <motion.span variants={item}>that feel right.</motion.span>
           </motion.h1>
 
           <p className="max-w-prose text-lg">
-            I build web and mobile products with React and React Native.
-            I care about performance on mid-range devices — because that's
-            what most users in Vietnam actually have.
+            I build web and mobile products with React and React Native. I care
+            about performance on mid-range devices — because that's what most
+            users in Vietnam actually have.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
