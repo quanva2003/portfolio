@@ -45,27 +45,49 @@ export function ProjectCard({ project, index, orientation }: Props) {
           />
         </div>
 
-        <div className="flex flex-col gap-4">
-          <p className="label">Project {num}</p>
-          <h3 className="text-2xl md:text-3xl font-semibold">
-            {project.title}
-          </h3>
-          <p className="text-text-secondary">{project.tagline}</p>
-
-          <div className="flex flex-wrap gap-2 mt-2">
-            {project.techStack.map((tech) => (
-              <span
-                key={tech}
-                className="font-mono text-xs px-2 py-1 rounded
-                           border border-border text-text-muted"
-              >
-                {tech}
-              </span>
-            ))}
+        <div className="flex flex-col gap-5 min-h-0 overflow-y-auto">
+          <div>
+            <p className="label">Project {num}</p>
+            <h3 className="text-2xl md:text-3xl font-semibold mt-2">
+              {project.title}
+            </h3>
+            <p className="text-text-secondary mt-2">{project.tagline}</p>
           </div>
 
-          <div className="flex flex-wrap gap-3 mt-auto pt-4">
-            {project.links.caseStudy ? (
+          <div className="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p className="label">Role</p>
+              <p className="text-text-secondary mt-1">{project.role}</p>
+            </div>
+            <div>
+              <p className="label">Timeline</p>
+              <p className="text-text-secondary mt-1">{project.timeline}</p>
+            </div>
+            <div className="col-span-2">
+              <p className="label">Platforms</p>
+              <p className="text-text-secondary mt-1">
+                {project.platforms.join(" · ")}
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p className="label mb-2">Stack</p>
+            <div className="flex flex-wrap gap-2">
+              {project.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="font-mono text-xs px-2 py-1 rounded
+                             border border-border text-text-muted"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-auto pt-2">
+            {project.links.caseStudy && (
               <LinkButton
                 variant="ghost"
                 size="sm"
@@ -73,8 +95,8 @@ export function ProjectCard({ project, index, orientation }: Props) {
               >
                 Case study →
               </LinkButton>
-            ) : null}
-            {project.links.live ? (
+            )}
+            {project.links.live && (
               <LinkButton
                 variant="ghost"
                 size="sm"
@@ -83,8 +105,8 @@ export function ProjectCard({ project, index, orientation }: Props) {
               >
                 <ExternalLink size={14} /> Live
               </LinkButton>
-            ) : null}
-            {project.links.repo ? (
+            )}
+            {project.links.repo && (
               <LinkButton
                 variant="mono"
                 size="sm"
@@ -93,7 +115,14 @@ export function ProjectCard({ project, index, orientation }: Props) {
               >
                 <GithubIcon className="w-3.5 h-3.5" /> Source
               </LinkButton>
-            ) : null}
+            )}
+            {!project.links.live &&
+              !project.links.repo &&
+              !project.links.caseStudy && (
+                <span className="font-mono text-xs text-text-muted">
+                  Internal — demo available on request
+                </span>
+              )}
           </div>
         </div>
       </div>
