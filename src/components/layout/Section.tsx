@@ -12,7 +12,7 @@ export function Section({ id, labelledBy, children, className }: SectionProps) {
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={`px-gutter py-20 ${className ?? ""}`}
+      className={`px-[var(--spacing-gutter-mobile)] md:px-[var(--spacing-gutter-desktop)] py-20 md:py-32 ${className ?? ""}`}
     >
       {children}
     </section>
