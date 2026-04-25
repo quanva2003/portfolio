@@ -43,16 +43,16 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full p-4 md:px-gutter bg-bg flex justify-between items-center z-50 ${
+      className={`fixed top-0 left-0 w-full p-4 md:px-[var(--spacing-gutter-desktop)] bg-bg flex justify-between items-center z-50 ${
         isSticky ? 'border-b border-black/20' : ''
       }`}
     >
       <a
         href="#"
-        className="text-2xl text-text-primary font-semibold hover:drop-shadow-[0_0_10px_rgba(0,251,255,0.5)] transition-all duration-300 hover:cursor-pointer"
+        className="text-2xl text-text-primary font-semibold hover:cursor-pointer"
       >
         {HEADER_CONFIG.brandName}{' '}
-        <span className="text-accent hover:drop-shadow-[0_0_15px_rgba(0,251,255,0.8)] transition-all duration-300">
+        <span className="text-accent">
           {HEADER_CONFIG.brandHighlight}
         </span>
       </a>
