@@ -63,16 +63,21 @@ export function ProjectCard({ project, index, orientation }: Props) {
           </div>
 
           <div className="flex flex-wrap gap-3 mt-auto pt-4">
-            {project.links.live && (
+            {project.links.caseStudy ? (
+              <LinkButton variant="ghost" size="sm" href={project.links.caseStudy}>
+                Case study →
+              </LinkButton>
+            ) : null}
+            {project.links.live ? (
               <LinkButton variant="ghost" size="sm" href={project.links.live} external>
                 <ExternalLink size={14} /> Live
               </LinkButton>
-            )}
-            {project.links.repo && (
+            ) : null}
+            {project.links.repo ? (
               <LinkButton variant="mono" size="sm" href={project.links.repo} external>
                 <GithubIcon className="w-3.5 h-3.5" /> Source
               </LinkButton>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
