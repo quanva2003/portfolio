@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <Section id="home" labelledBy="hero-heading">
-      <div className="relative min-h-[85vh] grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-12 md:gap-16 items-center">
+      <div className="relative min-h-[85vh] grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-12 md:gap-16 items-center pb-16 md:pb-24">
         <HeroSpotlight />
 
         {/* Text block */}
