@@ -19,6 +19,7 @@ export interface ProjectCaseStudy {
   links: {
     live?: string;
     repo?: string;
+    caseStudy?: string;
   };
   thumbnail: string;
   imageAlt: string;
