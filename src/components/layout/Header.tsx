@@ -91,7 +91,7 @@ const Header = () => {
                   {isActive && (
                     <motion.span
                       layoutId="nav-indicator"
-                      className="absolute inset-0 rounded-full bg-bg-glass border border-border-strong -z-10"
+                      className="absolute inset-x-3 bottom-0 h-px bg-accent"
                       transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                     />
                   )}
