@@ -21,8 +21,8 @@ export function ProjectCard({ project, index, orientation }: Props) {
     <Card className={`${widthClass} aspect-[16/10] relative`} spotlight={false}>
       <span
         aria-hidden="true"
-        className="absolute top-6 right-6 font-mono text-[8rem]
-                   leading-none text-text-muted/10 select-none"
+        className="absolute top-6 right-6 font-mono text-[10rem]
+                   leading-none text-white/[0.06] select-none"
       >
         {num}
       </span>
