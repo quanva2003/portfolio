@@ -7,7 +7,7 @@ import { ProjectsHorizontal } from './ProjectsHorizontal';
 import { ProjectsVertical } from './ProjectsVertical';
 
 export function Projects() {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
   const reduced = useReducedMotion();
   const useHorizontal = isDesktop && !reduced;
 

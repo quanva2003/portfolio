@@ -1,6 +1,6 @@
 export function HeroPortrait() {
   return (
-    <div className="relative aspect-[4/5] w-[min(380px,80vw)]">
+    <div className="relative aspect-[4/5] w-[min(380px,70vw)]">
       {/* Glow layer behind */}
       <div
         aria-hidden="true"

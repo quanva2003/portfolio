@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { MENU_ITEMS, HEADER_CONFIG } from "../../config/header";
 import MenuIcon from "../ui/icons/MenuIcon";
@@ -8,6 +8,8 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState<string | null>("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
+  const firstItemRef = useRef<HTMLAnchorElement>(null);
 
   // rAF-throttled scroll → only for sticky border, not section tracking
   useEffect(() => {
@@ -41,69 +43,96 @@ const Header = () => {
     return () => observer.disconnect();
   }, []);
 
+  // When menu opens, move focus to first nav link
+  useEffect(() => {
+    if (menuOpen) {
+      firstItemRef.current?.focus();
+    }
+  }, [menuOpen]);
+
+  const closeMenu = () => {
+    if (!menuOpen) return;
+    setMenuOpen(false);
+    menuBtnRef.current?.focus();
+  };
+
   return (
-    <header
-      className={`fixed top-0 left-0 w-full p-4 md:px-[var(--spacing-gutter-desktop)] bg-bg flex justify-between items-center z-50 ${
-        isSticky ? "border-b border-black/20" : ""
-      }`}
-    >
-      <a
-        href="#"
-        className="text-2xl text-text-primary font-semibold hover:cursor-pointer"
+    <>
+      {/* Backdrop: closes menu on outside tap on mobile */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+      )}
+
+      <header
+        className={`fixed top-0 left-0 w-full p-4 md:px-[var(--spacing-gutter-desktop)] bg-bg flex justify-between items-center z-50 ${
+          isSticky ? "border-b border-black/20" : ""
+        }`}
       >
-        {HEADER_CONFIG.brandName}{" "}
-        <span className="text-accent">{HEADER_CONFIG.brandHighlight}</span>
-      </a>
-
-      <div className="flex items-center">
-        <button
-          type="button"
-          className="text-text-primary cursor-pointer md:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
+        <a
+          href="#"
+          className="text-2xl text-text-primary font-semibold hover:cursor-pointer"
         >
-          {menuOpen ? <CloseIcon /> : <MenuIcon />}
-        </button>
+          {HEADER_CONFIG.brandName}{" "}
+          <span className="text-accent">{HEADER_CONFIG.brandHighlight}</span>
+        </a>
 
-        <nav
-          id="mobile-nav"
-          className={`${
-            menuOpen
-              ? "block absolute top-16 left-0 w-full bg-bg p-4"
-              : "hidden"
-          } md:block`}
-        >
-          <div className="flex flex-col md:flex-row">
-            {MENU_ITEMS.map((item) => {
-              const isActive = activeSection === item.id;
-              return (
-                <a
-                  key={item.id}
-                  href={item.href}
-                  aria-current={isActive ? "page" : undefined}
-                  className="relative text-lg md:ml-14 mb-4 md:mb-0 px-3 py-1 transition-colors duration-300 text-text-primary hover:text-accent"
-                >
-                  {item.label}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-indicator"
-                      className="absolute inset-x-3 bottom-0 h-px bg-accent"
-                      transition={{
-                        type: "spring",
-                        stiffness: 350,
-                        damping: 30,
-                      }}
-                    />
-                  )}
-                </a>
-              );
-            })}
-          </div>
-        </nav>
-      </div>
-    </header>
+        <div className="flex items-center">
+          <button
+            ref={menuBtnRef}
+            type="button"
+            className="inline-flex items-center justify-center w-11 h-11 text-text-primary cursor-pointer md:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            {menuOpen ? <CloseIcon /> : <MenuIcon />}
+          </button>
+
+          <nav
+            id="mobile-nav"
+            className={`${
+              menuOpen
+                ? "block absolute top-16 left-0 w-full bg-bg p-4 z-50"
+                : "hidden"
+            } md:block`}
+          >
+            <div className="flex flex-col md:flex-row">
+              {MENU_ITEMS.map((item, i) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <a
+                    key={item.id}
+                    href={item.href}
+                    ref={i === 0 ? firstItemRef : undefined}
+                    onClick={closeMenu}
+                    aria-current={isActive ? "page" : undefined}
+                    className="relative text-lg md:ml-14 mb-4 md:mb-0 px-3 py-1 transition-colors duration-300 text-text-primary hover:text-accent"
+                  >
+                    {item.label}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-indicator"
+                        className="absolute inset-x-3 bottom-0 h-px bg-accent"
+                        transition={{
+                          type: "spring",
+                          stiffness: 350,
+                          damping: 30,
+                        }}
+                      />
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+          </nav>
+        </div>
+      </header>
+    </>
   );
 };
 
