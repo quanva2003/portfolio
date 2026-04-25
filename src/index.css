@@ -64,7 +64,7 @@
 
   html { font-family: var(--font-sans); font-feature-settings: 'ss01', 'cv11'; }
 
-  h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 600;
+  h1 { font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 600;
        letter-spacing: -0.03em; line-height: 0.95; }
   h2 { font-size: clamp(1.875rem, 4vw, 3rem); font-weight: 600;
        letter-spacing: -0.02em; line-height: 1.1; }
@@ -87,6 +87,18 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .backdrop-blur-sm {
+    backdrop-filter: none;
+    background-color: rgba(255, 255, 255, 0.04);
+  }
 }
 
 ::-webkit-scrollbar       { width: 8px; }

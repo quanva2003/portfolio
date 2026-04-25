@@ -21,7 +21,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={icon.name}
-              className="text-text-muted hover:text-text-primary transition-colors"
+              className="inline-flex items-center justify-center w-11 h-11 text-text-muted hover:text-text-primary transition-colors"
             >
               <icon.Icon className="w-[18px] h-[18px]" />
             </a>
